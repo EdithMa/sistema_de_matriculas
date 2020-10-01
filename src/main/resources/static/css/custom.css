@@ -1,0 +1,21 @@
+.rojo{
+	color: red;
+}
+.rosado{
+	background: fuchsia
+}
+.image-container{	
+	display: flex;
+	justify-content: center;
+	margin: 0 auto;
+}
+.image-container img{
+	max-width: 500px;
+}
+.nav-container{
+	
+	height: 70px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
