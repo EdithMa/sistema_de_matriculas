@@ -8,14 +8,12 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.sistema_matriculas.demo.interfaceService.IUsuarioService;
-import com.sistema_matriculas.demo.models.Usuario;
 
 
 @Controller
 @RequestMapping
 public class UsuarioController {
-	
+	/*
 	@Autowired
 	private IUsuarioService uservice;
 	
@@ -30,4 +28,5 @@ public class UsuarioController {
 		model.addAttribute("usuarios", usuarios);
 		return "listar";
 	}
+	*/
 }
