@@ -24,13 +24,31 @@
 	max-width: 150px;
     max-height: 56px;
     position: absolute;
-    left: 198px;
-    top: 7px;
-}
-.carousel img {
-    max-height: 300px;
+	left: 50px;
+    top: -7px;
 }
 .nav-container{
 	background: #fa5c12;
 }
-
+.nav-logo{
+	display: flex;
+    position: relative;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+}
+.matricula-info a {
+    -webkit-animation: pulse 1s infinite;
+    animation: pulse 1s infinite;
+    -webkit-animation-timing-function: linear;
+    animation-timing-function: linear;
+}
+.matricula-info {
+    -webkit-animation-name: pulse;
+    animation-name: pulse;
+}
+a, li {
+    -webkit-transition: .3s ease-in;
+    transition: .3s ease-in;
+}
