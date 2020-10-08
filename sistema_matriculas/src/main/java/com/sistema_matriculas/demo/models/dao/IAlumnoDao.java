@@ -10,4 +10,5 @@ public interface IAlumnoDao {
 		public void save (Alumno alumno);
 		public Alumno buscarAlumno(Long id);
 		public void eliminar(Long id);
+		public abstract int existeAlumno(String email);
 }

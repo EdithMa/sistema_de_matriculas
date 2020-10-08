@@ -5,13 +5,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 public class InicioController {
-
-	@RequestMapping({"/index", "/login"})
-	public String index() {
+	
+	@RequestMapping("/login")
+	public String login() {
 		return "login";
 	}
-	@RequestMapping({"/Principal"})
-	public String ingresar() {
-		return "PantallaPrincipal";
+	
+	@RequestMapping({"/"})
+	public String index() {
+		return "index";
 	}
 }

@@ -38,7 +38,7 @@ public class ApoderadoController {
 	@RequestMapping(value = "/formApoderados", method = RequestMethod.POST)
 	public String guardar (Apoderado apoderado) {
 		apoderadoDAO.save(apoderado);
-		return "redirect:formApoderados";
+		return "redirect:login";
 	}
 	
 	@RequestMapping("/formApoderados/{id}")

@@ -54,7 +54,7 @@ public class AlumnoController {
 		return "formulario";
 	}
 	
-	@RequestMapping("/eliminar/{id}")
+	@RequestMapping("/eliminarAl/{id}")
 	public String eliminar(@PathVariable(value = "id") Long id) {
 		if(id > 0) {
 			alumnodao.eliminar(id);

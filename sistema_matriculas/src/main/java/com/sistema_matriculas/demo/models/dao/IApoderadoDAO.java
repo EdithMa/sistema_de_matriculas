@@ -11,4 +11,6 @@ public interface IApoderadoDAO {
 	public void save(Apoderado apoderado);
 	public Apoderado buscarApoderado(Long id);
 	public void eliminar(Long id);
+	public abstract int existeApod(String email);
+	public abstract boolean validarApod(Apoderado apod);
 }

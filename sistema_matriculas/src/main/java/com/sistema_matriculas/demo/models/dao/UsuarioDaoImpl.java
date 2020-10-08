@@ -45,4 +45,10 @@ public class UsuarioDaoImpl implements IAlumnoDao{
 		Alumno alumno = buscarAlumno(id);
 		em.remove(alumno);
 	}
+
+	@Override
+	public int existeAlumno(String email) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
 }
