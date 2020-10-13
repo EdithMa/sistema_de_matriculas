@@ -19,31 +19,31 @@
 		<div class="card">
 			<h5 class="card-header" th:text="${titulo}"></h5>
 			<div class="card-body">
-				<form th:action="@{/form}" th:object="${alumno}" method="post">
+				<form class="needs-validation" th:action="@{/form}" th:object="${alumno}" method="post">
 					<div class="row">
 						<div class="col-md-6 mb-2">
 							<label>Ingrese Nombres: </label> 
-							<input type="text" th:field="*{nombre}" class="form-control">
+							<input type="text" th:field="*{nombre}" class="form-control" required>
 						</div>
 						<div class="col-md-6 mb-2">
 							<label>Ingrese apellidos: </label> 
-							<input type="text" th:field="*{apellido}" class="form-control">
+							<input type="text" th:field="*{apellido}" class="form-control" required>
 						</div>						
 					</div>
 					<div class="row">
 						<div class="col-md-6 mb-2">
-							<label>Ingrese Email</label> 
-							<input type="text" th:field="*{email}" class="form-control">
+							<label>Ingrese nombre del familiar con el que vive</label> 
+							<input type="text" th:field="*{viveCon}" class="form-control" required>
 						</div>
 						<div class="col-md-6 mb-2">
 							<label>Ingrese número de hermanos</label> 
-							<input type="text" th:field="*{numeroHermanos}" class="form-control">
+							<input type="text" th:field="*{numeroHermanos}" class="form-control" required>
 						</div>
 					</div>
 					<div class="row">
 						<div class="col-md-6 mb-2">
 							<label>Ingrese colegio de procedencia</label> 
-							<input type="text" th:field="*{colegioProcedencia}" class="form-control">
+							<input type="text" th:field="*{colegioProcedencia}" class="form-control" required>
 						</div>
 						<div class="col-md-6 mb-2">
 							<label>Ingrese observaciones</label> 
@@ -53,7 +53,7 @@
 					<div class="row">
 						<div class="col-md-6 mb-2">
 							<label>Ingrese fecha nacimiento</label> 
-							<input type="date" th:field="*{fechanac}" class="form-control">
+							<input type="date" th:field="*{fechanac}" class="form-control" required>
 						</div>						
 					</div>
 					<br>

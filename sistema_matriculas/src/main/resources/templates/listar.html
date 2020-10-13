@@ -8,7 +8,7 @@
 </head>
 <body>
 	<div class="container mt-4">
-	<h1 class="text-center mb-4">Agregar Usuario</h1>
+	<h1 class="text-center mb-4">Agregar Alumno</h1>
 		<table class="table table-bordered table-hover">
 			<thead class="thead-dark">
 				<tr>
@@ -16,7 +16,7 @@
 					<th>Nombre</th>
 					<th>Apellido</th>
 					<th>Fecha Nac.</th>
-					<th>Email</th>
+					<th>Vive con</th>					
 					<th>Hermanos</th>
 					<th>Colegio proc.</th>
 					<th>Observaciones</th>
@@ -30,7 +30,7 @@
 					<td th:text="${alumno.nombre}"></td>
 					<td th:text="${alumno.apellido}"></td>
 					<td th:text="${alumno.fechanac}"></td>
-					<td th:text="${alumno.email}"></td>
+					<td th:text="${alumno.viveCon}"></td>					
 					<td th:text="${alumno.numeroHermanos}"></td>
 					<td th:text="${alumno.colegioProcedencia}"></td>
 					<td th:text="${alumno.observaciones}"></td>

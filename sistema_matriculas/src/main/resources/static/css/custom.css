@@ -38,17 +38,3 @@
     align-items: center;
     flex: 1;
 }
-.matricula-info a {
-    -webkit-animation: pulse 1s infinite;
-    animation: pulse 1s infinite;
-    -webkit-animation-timing-function: linear;
-    animation-timing-function: linear;
-}
-.matricula-info {
-    -webkit-animation-name: pulse;
-    animation-name: pulse;
-}
-a, li {
-    -webkit-transition: .3s ease-in;
-    transition: .3s ease-in;
-}

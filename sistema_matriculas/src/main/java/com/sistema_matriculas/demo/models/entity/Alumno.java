@@ -26,7 +26,7 @@ public class Alumno implements Serializable{
 	@DateTimeFormat(pattern="yyyy-MM-dd")
 	@Temporal(TemporalType.DATE)
 	private Date fechanac;
-	private String email;
+	private String viveCon;	
 	private String numeroHermanos;
 	private String colegioProcedencia;
 	private String observaciones;
@@ -46,19 +46,22 @@ public class Alumno implements Serializable{
 	public Alumno() {
 		
 	}
-	public Alumno(Long alumno_id, String nombre, String apellido, Date fechanac, String email, String numeroHermanos,
-			String colegioProcedencia, String observaciones, Date fechaCreacion) {
+
+	
+	public Alumno(Long alumno_id, String nombre, String apellido, Date fechanac, String viveCon, 
+			String numeroHermanos, String colegioProcedencia, String observaciones, Date fechaCreacion) {
 		super();
 		this.alumno_id = alumno_id;
 		this.nombre = nombre;
 		this.apellido = apellido;
 		this.fechanac = fechanac;
-		this.email = email;
+		this.viveCon = viveCon;		
 		this.numeroHermanos = numeroHermanos;
 		this.colegioProcedencia = colegioProcedencia;
 		this.observaciones = observaciones;
 		this.fechaCreacion = fechaCreacion;
 	}
+
 	public Long getAlumno_id() {
 		return alumno_id;
 	}
@@ -70,12 +73,6 @@ public class Alumno implements Serializable{
 	}
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
-	}
-	public String getEmail() {
-		return email;
-	}
-	public void setEmail(String email) {
-		this.email = email;
 	}
 	public Date getFechaCreacion() {
 		return fechaCreacion;
@@ -113,6 +110,11 @@ public class Alumno implements Serializable{
 	public void setFechanac(Date fechanac) {
 		this.fechanac = fechanac;
 	}
-	
+	public String getViveCon() {
+		return viveCon;
+	}
+	public void setViveCon(String viveCon) {
+		this.viveCon = viveCon;
+	}	
 	
 }
