@@ -25,7 +25,8 @@
 					<div class="row">
 						<div class="col-md-6 mb-2">
 							<label>Ingrese Nombres: </label> 
-							<input type="text" th:field="*{nombre}" maxlength="35" onkeypress="return soloLetras1(event)" onblur="limpia2()" id="AlumnoNombre" class="form-control" required>
+							<!-- <input type="text" th:field="*{nombre}" maxlength="35" onkeypress="return soloLetras1(event)" onblur="limpia2()" id="AlumnoNombre" class="form-control" required> -->
+							<input type="text" th:field="*{nombre}" onkeypress="return soloLetras(event)" onblur="limpia()" id="ApoderadoNombre" class="form-control" pattern=".{3,15}" required>						
 						</div>
 						<div class="col-md-6 mb-2">
 							<label>Ingrese apellidos: </label> 
@@ -35,7 +36,15 @@
 					<div class="row">
 						<div class="col-md-6 mb-2">
 							<label>Ingrese nombre del familiar con el que vive</label> 
-							<input type="text" th:field="*{viveCon}" maxlength="20" onkeypress="return soloLetras2(event)" onblur="ViveCon()" id="AlumnoNombre" class="form-control" required>
+							<!-- <input type="text" th:field="*{viveCon}" maxlength="20" onkeypress="return soloLetras2(event)" onblur="ViveCon()" id="AlumnoNombre" class="form-control" required> -->	
+							<select class="form-control" id="" th:field="*{viveCon}">
+						      <div>
+							      <option value="">Seleccione</option>
+							      <option value="Padre">Padre</option>
+							      <option value="Madre">Madre</option>
+							      <option value="Otros">Otros</option>
+						      </div>						     
+						    </select>						
 						</div>
 						<div class="col-md-6 mb-2">
 							<label>Ingrese número de hermanos</label> 
