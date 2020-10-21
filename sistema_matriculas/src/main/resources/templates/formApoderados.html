@@ -21,7 +21,7 @@
 				<div class="row">
 					<div class="col-md-6 mb-2">
 						<label>Ingrese Nombres:</label> 
-						<input type="text" th:field="*{nombre}" maxlength="35" onkeypress="return soloLetras(event)" onblur="limpia()" id="ApoderadoNombre" class="form-control" required>
+						<input type="text" th:field="*{nombre}" onkeypress="return soloLetras(event)" onblur="limpia()" id="ApoderadoNombre" class="form-control" pattern=".{3,15}" required>
 						<p class="validation">Escribe solo letras.</p>					
 					</div>
 					
