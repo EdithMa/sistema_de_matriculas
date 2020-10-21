@@ -11,6 +11,8 @@
 <script th:src="@{/js/jquery-3.5.1.min.js}" type="text/javascript"></script>
 <script th:src="@{/js/bootstrap.min.js}" type="text/javascript"></script>
 <script th:src="@{/js/popper.min.js}" type="text/javascript"></script>
+<script th:src="@{/js/funciones.js}" type="text/javascript"></script>
+
 
 </head>
 <body>
@@ -23,31 +25,31 @@
 					<div class="row">
 						<div class="col-md-6 mb-2">
 							<label>Ingrese Nombres: </label> 
-							<input type="text" th:field="*{nombre}" class="form-control" required>
+							<input type="text" th:field="*{nombre}" maxlength="35" onkeypress="return soloLetras1(event)" onblur="limpia2()" id="AlumnoNombre" class="form-control" required>
 						</div>
 						<div class="col-md-6 mb-2">
 							<label>Ingrese apellidos: </label> 
-							<input type="text" th:field="*{apellido}" class="form-control" required>
+							<input type="text" th:field="*{apellido}" maxlength="35" onkeypress="return soloLetras1(event)" onblur="limpia3()" id="AlumnoApellido" class="form-control" required>
 						</div>						
 					</div>
 					<div class="row">
 						<div class="col-md-6 mb-2">
 							<label>Ingrese nombre del familiar con el que vive</label> 
-							<input type="text" th:field="*{viveCon}" class="form-control" required>
+							<input type="text" th:field="*{viveCon}" maxlength="20" onkeypress="return soloLetras2(event)" onblur="ViveCon()" id="AlumnoNombre" class="form-control" required>
 						</div>
 						<div class="col-md-6 mb-2">
 							<label>Ingrese número de hermanos</label> 
-							<input type="text" th:field="*{numeroHermanos}" class="form-control" required>
+							<input type="text" th:field="*{numeroHermanos}" maxlength="2" class="form-control" onkeypress="return soloNumeros(event)" required>
 						</div>
 					</div>
 					<div class="row">
 						<div class="col-md-6 mb-2">
 							<label>Ingrese colegio de procedencia</label> 
-							<input type="text" th:field="*{colegioProcedencia}" class="form-control" required>
+							<input type="text" th:field="*{colegioProcedencia}" maxlength="40" class="form-control" required>
 						</div>
 						<div class="col-md-6 mb-2">
 							<label>Ingrese observaciones</label> 
-							<input type="text" th:field="*{observaciones}" class="form-control">
+							<input type="text" th:field="*{observaciones}" maxlength="120" class="form-control">
 						</div>
 					</div>
 					<div class="row">

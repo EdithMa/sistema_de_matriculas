@@ -38,3 +38,7 @@
     align-items: center;
     flex: 1;
 }
+.validation{
+	display: none;
+}
+
