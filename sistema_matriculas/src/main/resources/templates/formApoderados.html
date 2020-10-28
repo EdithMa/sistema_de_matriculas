@@ -27,7 +27,7 @@
 					
 					<div class="col-md-6 mb-2">
 						<label>Ingrese Apellidos:</label> 
-						<input type="text" th:field="*{apellidos}" maxlength="35" onkeypress="return soloLetras(event)" onblur="limpia1()" id="ApoderadoApellido" class="form-control" required>
+						<input type="text" th:field="*{apellidos}" onkeypress="return soloLetras(event)" onblur="limpia1()" id="ApoderadoApellido" class="form-control" pattern=".{3,15}" required>
 					</div>
 				</div>
 				
@@ -35,7 +35,7 @@
 				<div class="row">
 					<div class="col-md-6 mb-2">
 						<label>Ingrese DNI:</label> 
-						<input type="text" th:field="*{dni}" maxlength="8" class="form-control" onkeypress="return soloNumeros(event)" required>						
+						<input type="text" th:field="*{dni}" class="form-control" onkeypress="return soloNumeros(event)" pattern=".{8,8}" required>						
 					</div>
 					
 					<div class="col-md-6 mb-2">
@@ -47,7 +47,7 @@
 				<div class="row">
 					<div class="col-md-6 mb-2">
 						<label>Ingrese Teléfono:</label> 
-						<input type="text" th:field="*{telefono}" maxlength="9" class="form-control" onkeypress="return soloNumeros(event)" required>
+						<input type="text" th:field="*{telefono}" class="form-control" onkeypress="return soloNumeros(event)" pattern=".{7,9}" required>
 					</div>
 				</div>
 				<br>

@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -25,19 +26,21 @@
 					<div class="row">
 						<div class="col-md-6 mb-2">
 							<label>Ingrese Nombres: </label> 
+
 							<!-- <input type="text" th:field="*{nombre}" maxlength="35" onkeypress="return soloLetras1(event)" onblur="limpia2()" id="AlumnoNombre" class="form-control" required> -->
 							<input type="text" th:field="*{nombre}" onkeypress="return soloLetras(event)" onblur="limpia()" id="ApoderadoNombre" class="form-control" pattern=".{3,15}" required>						
+
 						</div>
 						<div class="col-md-6 mb-2">
 							<label>Ingrese apellidos: </label> 
-							<input type="text" th:field="*{apellido}" maxlength="35" onkeypress="return soloLetras1(event)" onblur="limpia3()" id="AlumnoApellido" class="form-control" required>
+							<input type="text" th:field="*{apellido}" onkeypress="return soloLetras1(event)" onblur="limpia3()" id="AlumnoApellido" class="form-control" pattern=".{3,15}" required>
 						</div>						
 					</div>
 					<div class="row">
 						<div class="col-md-6 mb-2">
 							<label>Ingrese nombre del familiar con el que vive</label> 
 							<!-- <input type="text" th:field="*{viveCon}" maxlength="20" onkeypress="return soloLetras2(event)" onblur="ViveCon()" id="AlumnoNombre" class="form-control" required> -->	
-							<select class="form-control" id="" th:field="*{viveCon}">
+							<select class="form-control" id="" th:field="*{viveCon}" required>
 						      <div>
 							      <option value="">Seleccione</option>
 							      <option value="Padre">Padre</option>
@@ -54,17 +57,17 @@
 					<div class="row">
 						<div class="col-md-6 mb-2">
 							<label>Ingrese colegio de procedencia</label> 
-							<input type="text" th:field="*{colegioProcedencia}" maxlength="40" class="form-control" required>
+							<input type="text" th:field="*{colegioProcedencia}" class="form-control" pattern=".{5,30}" required>
 						</div>
 						<div class="col-md-6 mb-2">
 							<label>Ingrese observaciones</label> 
-							<input type="text" th:field="*{observaciones}" maxlength="120" class="form-control">
+							<input type="text" th:field="*{observaciones}" class="form-control" pattern=".{5,120}">
 						</div>
 					</div>
 					<div class="row">
 						<div class="col-md-6 mb-2">
 							<label>Ingrese fecha nacimiento</label> 
-							<input type="date" th:field="*{fechanac}" class="form-control" required>
+							<input type="date" th:field="*{fechanac}" class="form-control" min="2002-12-31" max="2014-12-31" required>
 						</div>						
 					</div>
 					<br>
