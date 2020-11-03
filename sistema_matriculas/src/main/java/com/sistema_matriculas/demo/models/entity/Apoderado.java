@@ -1,20 +1,17 @@
 package com.sistema_matriculas.demo.models.entity;
 
 import java.io.Serializable;
-import java.util.Date;
 
-import javax.persistence.Column;
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.PrePersist;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
 import javax.persistence.Transient;
 
-import org.springframework.format.annotation.DateTimeFormat;
 
 @Entity
 @Table (name = "apoderados")
@@ -37,6 +34,9 @@ public class Apoderado implements Serializable {
 	@Transient
 	private String confirmPass;
 	private static final long serialVersionUID = 1L;
+	
+	@OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "apoderado")
+	private Usuario usuario;
 	
 	/*@PrePersist
 	public void fechaRegistro() {
