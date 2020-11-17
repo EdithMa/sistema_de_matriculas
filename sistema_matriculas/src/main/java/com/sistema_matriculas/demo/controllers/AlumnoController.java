@@ -21,7 +21,7 @@ public class AlumnoController {
 	@RequestMapping("/listar")
 	public String listar(Model model) {
 		model.addAttribute("alumnos", alumnodao.getAlumnos());
-		return "listar";
+		return "alumno/listar";
 	}
 	
 	@RequestMapping("/form")
@@ -30,13 +30,13 @@ public class AlumnoController {
 		model.put("titulo", "Registrar Alumno");
 		model.put("guardar", "Registrar");
 		model.put("alumno", alumno);
-		return "formulario";
+		return "alumno/formulario";
 	}
 	
 	@RequestMapping(value = "/form", method = RequestMethod.POST)
 	public String guardar(Alumno alumno) {
 		alumnodao.save(alumno);
-		return "redirect:listar";
+		return "redirect:alumno/listar";
 	}
 	
 	@RequestMapping("/form/{id}")
@@ -51,7 +51,7 @@ public class AlumnoController {
 		model.addAttribute("titulo", "Editar Alumno");
 		model.addAttribute("guardar", "Actualizar");
 		model.addAttribute("alumno", alumno);
-		return "formulario";
+		return "alumno/formulario";
 	}
 	
 	@RequestMapping("/eliminarAl/{id}")
@@ -59,7 +59,7 @@ public class AlumnoController {
 		if(id > 0) {
 			alumnodao.eliminar(id);
 		}
-		return "redirect:/listar";
+		return "redirect:alumno/listar";
 	}
 	
 	
