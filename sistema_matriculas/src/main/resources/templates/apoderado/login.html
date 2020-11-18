@@ -31,12 +31,12 @@
 			<div class="row">
 				<div class="col-12 mt-3">
 					<!-- <button type="button" class="btn btn-dark"><i class="fas fa-user-check"></i> Iniciar Sesión</button> -->
-					<a th:href="@{/apoderado/index}" class="btn btn-dark"><i class="fas fa-user-check"></i> Iniciar Sesión</a>
+					<a th:href="@{/}" class="btn btn-dark"><i class="fas fa-user-check"></i> Iniciar Sesión</a>
 				</div>
 			</div>
 				<div class="col-12 forgot">
 					<p>
-						<a th:href="@{/formApoderados}">Crear Usuario - Registrarse</a>
+						<a th:href="@{/formApoderados}">No tienes una cuenta? Registrate</a>
 				</div>
 				<div th:if="${param.error}" class="alert alert-danger" role="alert">
 					Nick o Contraseña Invalidas</div>
