@@ -20,12 +20,17 @@ public class ApoderadoController {
 	@Autowired
 	private IApoderadoDAO apoderadoDAO;
 	
+	@RequestMapping("/confirmation")
+	public String confirm() {		
+		return "apoderado/confirmation";
+	}
+	
 	@RequestMapping("/apoderado/listaApoderados")
 	public String listar(Model model) {
 		model.addAttribute("apoderados",apoderadoDAO.getApoderados());
 		return "apoderado/listaApoderados";
 	}
-	
+
 	@RequestMapping("/formApoderados")
 	public String crear(Map<String, Object> model) {
 		Apoderado apoderado = new Apoderado();
@@ -35,12 +40,13 @@ public class ApoderadoController {
 		return "/apoderado/formApoderados";
 	}
 	
+	/*
 	@RequestMapping(value = "/formApoderados", method = RequestMethod.POST)
 	public String guardar (Apoderado apoderado) {
 		apoderadoDAO.save(apoderado);
-		return "redirect:/";
+		return "redirect:/apoderado/listaApoderados";
 	}
-	
+	*/
 	@RequestMapping("/formApoderados/{id}")
 	public String editar(@PathVariable(value="id") Long id, Model model) {
 		Apoderado apoderado = null;
@@ -61,6 +67,12 @@ public class ApoderadoController {
 			apoderadoDAO.eliminar(id);
 		}
 		return "redirect:/apoderado/listaApoderados";
+	}
+	
+	@RequestMapping(value = "/formApoderados", method = RequestMethod.POST)
+	public String guardar (Apoderado apoderado) {
+		apoderadoDAO.save(apoderado);
+		return "redirect:/confirmation";
 	}
 }
 

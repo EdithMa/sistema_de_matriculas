@@ -11,14 +11,11 @@
     flex-direction: column;
     justify-content: center;
 }
-.nav-item.inicio a:last-of-type {
-    padding-left: 0;
-}
 .nav-item.inicio{
     display: flex;
 }
-.nav-item.inicio a:first-of-type {
-    padding-right: 5px;
+.nav-item.inicio{
+    padding-right: 45px;
 }
 .image-container-x img{
 	max-width: 150px;
@@ -41,4 +38,6 @@
 .validation{
 	display: none;
 }
-
+.modal-content {
+    padding: 15px;
+}
