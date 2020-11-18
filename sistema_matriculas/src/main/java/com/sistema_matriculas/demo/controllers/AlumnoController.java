@@ -18,40 +18,40 @@ public class AlumnoController {
 	@Autowired
 	private IAlumnoDao alumnodao;
 	
-	@RequestMapping("/listar")
+	@RequestMapping("/alumno/listar")
 	public String listar(Model model) {
 		model.addAttribute("alumnos", alumnodao.getAlumnos());
-		return "alumno/listar";
+		return "/alumno/listar";
 	}
 	
-	@RequestMapping("/form")
+	@RequestMapping("/formulario")
 	public String crear(Map<String, Object> model) {
 		Alumno alumno = new Alumno();
 		model.put("titulo", "Registrar Alumno");
 		model.put("guardar", "Registrar");
 		model.put("alumno", alumno);
-		return "alumno/formulario";
+		return "/alumno/formulario";
 	}
 	
-	@RequestMapping(value = "/form", method = RequestMethod.POST)
+	@RequestMapping(value = "/formulario", method = RequestMethod.POST)
 	public String guardar(Alumno alumno) {
 		alumnodao.save(alumno);
-		return "redirect:alumno/listar";
+		return "redirect:/alumno/listar";
 	}
 	
-	@RequestMapping("/form/{id}")
+	@RequestMapping("/formulario/{id}")
 	public String editar(@PathVariable(value = "id") Long id, Model model) {
 		Alumno alumno = null;
 		if(id > 0) {
 			alumno = alumnodao.buscarAlumno(id);
 		}
 		else {
-			System.out.println("No existe usuario con ese id");
+			return "redirect:/alumno/listar";
 		}
 		model.addAttribute("titulo", "Editar Alumno");
 		model.addAttribute("guardar", "Actualizar");
 		model.addAttribute("alumno", alumno);
-		return "alumno/formulario";
+		return "/alumno/formulario";
 	}
 	
 	@RequestMapping("/eliminarAl/{id}")
@@ -59,7 +59,7 @@ public class AlumnoController {
 		if(id > 0) {
 			alumnodao.eliminar(id);
 		}
-		return "redirect:alumno/listar";
+		return "redirect:/alumno/listar";
 	}
 	
 	
