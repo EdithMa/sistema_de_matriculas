@@ -20,6 +20,8 @@ public class Grado implements Serializable{
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	private String descripcion;
+	private String secciones;
+	private String tipo;
 	
 	//Relacion entre Grado - Seccion
 	@ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
@@ -32,19 +34,36 @@ public class Grado implements Serializable{
 	}
 	public void setId(Long id) {
 		this.id = id;
-	}
+	}		
 	public String getDescripcion() {
 		return descripcion;
 	}
 	public void setDescripcion(String descripcion) {
 		this.descripcion = descripcion;
 	}
-	public Grado(Long id, String descripcion) {
-		super();
-		this.id = id;
-		this.descripcion = descripcion;
+	public String getSecciones() {
+		return secciones;
+	}	
+	public void setSecciones(String secciones) {
+		this.secciones = secciones;
+	}				
+	public String getTipo() {
+		return tipo;
+	}
+	public void setTipo(String tipo) {
+		this.tipo = tipo;
 	}
 	
+	public Grado(Long id, String descripcion, String secciones, String tipo) {
+		this.id = id;
+		this.descripcion = descripcion;
+		this.secciones = secciones;
+		this.tipo = tipo;
+	}
+
+	public Grado() {
+	}
+
 
 	/**
 	 * 
