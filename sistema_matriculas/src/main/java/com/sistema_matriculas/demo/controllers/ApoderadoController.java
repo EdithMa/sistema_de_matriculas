@@ -20,10 +20,10 @@ public class ApoderadoController {
 	@Autowired
 	private IApoderadoDAO apoderadoDAO;
 	
-	@RequestMapping("/listaApoderados")
+	@RequestMapping("/apoderado/listaApoderados")
 	public String listar(Model model) {
 		model.addAttribute("apoderados",apoderadoDAO.getApoderados());
-		return "listaApoderados";
+		return "apoderado/listaApoderados";
 	}
 	
 	@RequestMapping("/formApoderados")
@@ -32,13 +32,13 @@ public class ApoderadoController {
 		model.put("titulo", "Registrar datos del Apoderado");
 		model.put("nombreboton", "Registrarse");
 		model.put("apoderado", apoderado);
-		return "formApoderados";
+		return "/apoderado/formApoderados";
 	}
 	
 	@RequestMapping(value = "/formApoderados", method = RequestMethod.POST)
 	public String guardar (Apoderado apoderado) {
 		apoderadoDAO.save(apoderado);
-		return "redirect:login";
+		return "redirect:/";
 	}
 	
 	@RequestMapping("/formApoderados/{id}")
@@ -47,12 +47,12 @@ public class ApoderadoController {
 		if(id>0) {
 			apoderado = apoderadoDAO.buscarApoderado(id);
 		}else {
-			return "redirect:/listaApoderados";
+			return "redirect:/apoderado/listaApoderados";
 		}
 		model.addAttribute("titulo","Modificar datos del apoderado");
 		model.addAttribute("apoderado",apoderado);
 		model.addAttribute("nombreboton", "Actualizar datos");
-		return "formApoderados";
+		return "apoderado/formApoderados";
 	}
 	
 	@RequestMapping("/eliminar/{id}")
@@ -60,7 +60,7 @@ public class ApoderadoController {
 		if(id>0) {
 			apoderadoDAO.eliminar(id);
 		}
-		return "redirect:/listaApoderados";
+		return "redirect:/apoderado/listaApoderados";
 	}
 }
 

@@ -7,12 +7,20 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class LoginController {
 	@RequestMapping("/admin")
 	public String index() {
-		return "admin/login";
+		return "/admin/login";
 	}
 	
+	@RequestMapping("/admin/index")
+	public String index2() {
+		return "/admin/index";
+	}
 	
-	@RequestMapping("/log")
-	public String index1() {
-		return "login";
+	@RequestMapping("/apoderado")
+	public String index3() {
+		return "/apoderado/login";
+	}
+	@RequestMapping("/apoderado/index")
+	public String index4() {
+		return "/apoderado/index";
 	}
 }

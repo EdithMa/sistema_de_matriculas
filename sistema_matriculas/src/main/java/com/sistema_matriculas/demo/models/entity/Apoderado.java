@@ -29,10 +29,10 @@ public class Apoderado implements Serializable {
 	//@DateTimeFormat(pattern="yyyy-MM-dd")
 	//private Date fechaCreacion;
 	private String telefono;
-	private String username;
-	private String password;
+	//private String username;
+	//private String password;
 	@Transient
-	private String confirmPass;
+	//private String confirmPass;
 	private static final long serialVersionUID = 1L;
 	
 	@OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "apoderado")
@@ -90,24 +90,25 @@ public class Apoderado implements Serializable {
 	public void setTelefono(String telefono) {
 		this.telefono = telefono;
 	}
-	public String getUsername() {
-		return username;
-	}
-	public void setUsername(String username) {
-		this.username = username;
-	}
-	public String getPassword() {
-		return password;
-	}
-	public void setPassword(String password) {
-		this.password = password;
-	}
-	public String getConfirmPass() {
-		return confirmPass;
-	}
-	public void setConfirmPass(String confirmPass) {
-		this.confirmPass = confirmPass;
-	}
+
+	//public String getUsername() {
+	//	return username;
+	//}
+	//public void setUsername(String username) {
+	//	this.username = username;
+	//}
+	//public String getPassword() {
+	//	return password;
+	//}
+	//public void setPassword(String password) {
+	//	this.password = password;
+	//}
+	//public String getConfirmPass() {
+	//	return confirmPass;
+	//}
+	//public void setConfirmPass(String confirmPass) {
+	//	this.confirmPass = confirmPass;
+	//}
 	public Apoderado(Long id, String nombre, String apellidos, String dni, String email, String telefono,
 			String username, String password, String confirmPass) {
 		super();
@@ -117,9 +118,9 @@ public class Apoderado implements Serializable {
 		this.dni = dni;
 		this.email = email;
 		this.telefono = telefono;
-		this.username = username;
-		this.password = password;
-		this.confirmPass = confirmPass;
+		//this.username = username;
+		//this.password = password;
+		//this.confirmPass = confirmPass;
 	}
 	public Apoderado() {
 		

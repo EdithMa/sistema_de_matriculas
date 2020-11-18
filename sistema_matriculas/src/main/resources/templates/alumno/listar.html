@@ -37,7 +37,7 @@
 					<td th:text="${alumno.observaciones}"></td>
 					<td th:text="${alumno.fechaCreacion}"></td>										
 					<td>
-						<a th:href="@{/form/}+${alumno.alumno_id}" class="btn btn-dark">Editar</a>
+						<a th:href="@{/alumno/form/}+${alumno.alumno_id}" class="btn btn-dark">Editar</a>
 					</td>
 					<td>
 						<a th:href="@{/eliminarAl/}+${alumno.alumno_id}" class="btn btn-dark" onclick="return confirm('Seguro que desea eliminar el registro?');">Eliminar</a>

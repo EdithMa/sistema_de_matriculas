@@ -19,19 +19,21 @@
 					<img src="static/img/user.png" th:src="@{/img/login.png}"
 						width="180" />
 				</div>
-				<form class="col-12 mb-4" th:action="@{/login}" method="post">
-					<div class="form-group" id="user-group">
-						<input type="text" class="form-control"
-							placeholder="Nombre de usuario" name="username" />
-					</div>
-					<div class="form-group" id="contrasena-group">
-						<input type="password" class="form-control"
-							placeholder="Contrasena" name="password" />
-					</div>
-					<button type="submit" class="btn btn-primary">
-						<i class="fas fa-sign-in-alt"></i> Ingresar
-					</button>
-				</form>
+				<div class="row margen">
+				<div class="col-12 mt-3">
+					<input type="text" name="" class="form-control" placeholder="Ingrese Usuario">
+				</div>
+				<div class="col-12 mt-3">
+					<input type="password" name="" class="form-control" placeholder="Contraseña">
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-12 mt-3">
+					<!-- <button type="button" class="btn btn-dark"><i class="fas fa-user-check"></i> Iniciar Sesión</button> -->
+					<a th:href="@{/apoderado/index}" class="btn btn-dark"><i class="fas fa-user-check"></i> Iniciar Sesión</a>
+				</div>
+			</div>
 				<div class="col-12 forgot">
 					<p>
 						<a th:href="@{/formApoderados}">Crear Usuario - Registrarse</a>
