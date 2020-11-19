@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
 
 <head th:fragment="head">  
   <meta charset="UTF-8">
@@ -154,9 +155,13 @@
             <!-- Nav Item - User Information -->
             <li class="nav-item dropdown no-arrow">
               <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Administrador</span>
+                <span class="mr-2 d-none d-lg-inline text-gray-600 small" th:inline="text">Hola [[${#httpServletRequest.remoteUser}]]!</span>
+                <form th:action="@{/logout}" method="post">
+                  <input type="submit" value="Cerrar Sesion"/>
+              </form>
                 <img class="img-profile rounded-circle" src="https://source.unsplash.com/QAB-WJcbgJk/60x60">
               </a>
+              <h1><a th:href="@{/administrador}"> admin</a> | <a th:href="@{/user}"> user</a></h1>
               <!-- Dropdown - User Information -->
               <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
                           

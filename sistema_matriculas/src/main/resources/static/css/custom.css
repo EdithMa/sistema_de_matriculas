@@ -41,3 +41,7 @@
 .modal-content {
     padding: 15px;
 }
+body.bg-login-admin {
+    background: url(../img/fondo_paris.jpg) no-repeat center center fixed;
+    background-size: cover;
+}

@@ -5,15 +5,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 public class LoginController {
-	@RequestMapping("/admin")
-	public String index() {
-		return "/admin/login";
-	}
-	
-	@RequestMapping("/admin/index")
-	public String index2() {
-		return "/admin/index";
-	}
 	
 	@RequestMapping("/apoderado")
 	public String index3() {

@@ -18,7 +18,7 @@ public class Usuario implements Serializable{
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long usuario_id;
+	private Long usuario_idd;
 	
 	@OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
 	@JoinColumn(name= "admin_id")
@@ -33,16 +33,16 @@ public class Usuario implements Serializable{
 	private Apoderado apoderado;
 	
 	public Long getUsuario_id() {
-		return usuario_id;
+		return usuario_idd;
 	}
 
 	public void setUsuario_id(Long usuario_id) {
-		this.usuario_id = usuario_id;
+		this.usuario_idd = usuario_id;
 	}
 
 	public Usuario(Long usuario_id) {
 		super();
-		this.usuario_id = usuario_id;
+		this.usuario_idd = usuario_id;
 	}
 	
 	/**
