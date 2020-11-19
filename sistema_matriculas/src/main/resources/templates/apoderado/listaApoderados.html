@@ -13,7 +13,7 @@
     		
 				<div class ="container">
 				<br>
-				<h1>Lista de Apoderados Registrados</h1>
+				<h1>Lista de Apoderados</h1>
 				<table class = "table table-bordered table-hover">
 					<thead class="thead-dark">
 						<tr>
@@ -22,9 +22,9 @@
 							<th>Apellido</th>
 							<th>DNI</th>
 							<th>Email</th>
-							<th>Teléfono</th>
+							<th>TelÃ©fono</th>
 							<th></th>
-							<th></th>
+							<!--  <th></th> -->
 						</tr>
 					</thead>
 					<tbody>
@@ -35,12 +35,12 @@
 							<td th:text="${item.dni}"></td>
 							<td th:text="${item.email}"></td>
 							<td th:text="${item.telefono}"></td>
-							<td>
+							<!-- <td>
 								<a th:href="@{/formApoderados/}+${item.id}" class="btn btn-dark">Editar</a>
 								
-							</td>
+							</td> -->
 							<td> 
-								<a th:href="@{/eliminar/}+${item.id}" class="btn btn-dark" onclick="return confirm('¿Estás seguro de eliminar?');">Eliminar</a>
+								<a th:href="@{/eliminar/}+${item.id}" class="btn btn-dark" onclick="return confirm('Â¿EstÃ¡s seguro de eliminar?');">Eliminar</a>
 							</td>
 						</tr>
 					</tbody>

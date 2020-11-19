@@ -30,15 +30,13 @@ public class Alumno implements Serializable{
 	private Long alumno_id;
 	private String nombre;
 	private String apellido;
-	@DateTimeFormat(pattern="yyyy-MM-dd")
-	@Temporal(TemporalType.DATE)
-	private Date fechanac;
 	private String viveCon;	
 	private String numeroHermanos;
 	private String colegioProcedencia;
 	private String observaciones;
+	@DateTimeFormat(pattern="yyyy-MM-dd")
 	@Temporal(TemporalType.DATE)
-	private Date fechaCreacion;
+	private Date fechanac;
 	private static final long serialVersionUID = 1L;
 	
 	//Relacion entre Alumno - usuario
@@ -50,33 +48,25 @@ public class Alumno implements Serializable{
 	@JoinColumn(name= "alumno_id")
 	private List<Matricula> matricula;
 	
-	@PrePersist
-	public void inicializar() {
-		fechaCreacion = new Date();
-	}
-	
-	public void fechanac() {
-		fechanac = new Date();
-	}	
-	
+
+
 	public Alumno() {
 		this.matricula = new ArrayList<Matricula>();
 	}
 	
 
 	
-	public Alumno(Long alumno_id, String nombre, String apellido, Date fechanac, String viveCon, 
-			String numeroHermanos, String colegioProcedencia, String observaciones, Date fechaCreacion) {
+	public Alumno(Long alumno_id, String nombre, String apellido, String viveCon, 
+			String numeroHermanos, String colegioProcedencia, String observaciones, Date fechanac) {
 		super();
 		this.alumno_id = alumno_id;
 		this.nombre = nombre;
 		this.apellido = apellido;
-		this.fechanac = fechanac;
 		this.viveCon = viveCon;		
 		this.numeroHermanos = numeroHermanos;
 		this.colegioProcedencia = colegioProcedencia;
 		this.observaciones = observaciones;
-		this.fechaCreacion = fechaCreacion;
+		this.fechanac = fechanac;
 	}
 
 	public Long getAlumno_id() {
@@ -91,12 +81,7 @@ public class Alumno implements Serializable{
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
-	public Date getFechaCreacion() {
-		return fechaCreacion;
-	}
-	public void setFechaCreacion(Date fechaCreacion) {
-		this.fechaCreacion = fechaCreacion;
-	}
+
 	public String getApellido() {
 		return apellido;
 	}
