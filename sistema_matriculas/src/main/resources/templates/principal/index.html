@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+<head th:replace="layout/layout :: head"></head>
+<body>
+    <div class="wrapper ">
+        <div class="sidebar" data-color="red" th:replace="layout/layout :: sidebar"></div>
+
+        <div class="main-panel" id="main-panel">
+            <nav class="navbar navbar-expand-lg navbar-transparent  bg-primary  navbar-absolute" th:replace="layout/layout :: navbar"></nav>
+
+			<div class="panel-header panel-header-lg" >
+            	<div th:replace="layout/layout :: error-msg" class="alert alert-danger alert-dismissible fade show" role="alert" th:if="${error != null}"></div>
+			</div>
+			
+          <div class="content">
+            <!--Código aquí-->
+            <div class="container-home" >
+                <div class="row">
+                  <div class="col-md-3">
+                    <div class="card card-chart to-alumnos">
+                      <div class="card-header">
+                        <h5 class="card-category">Acceso directo</h5>
+                        <h5 class="card-title">Alumnos</h5>
+                      </div>
+                      <div class="card-body">
+                        <div class="chart-area">
+                          <img alt="graduation-cap" th:src="@{/img/graduation-cap.png}">
+                        </div>
+                      </div>
+                      <div class="card-footer bg-light text-center">
+                        <a class="stats" th:href="@{/formulario}">
+                          <i class="fas fa-arrow-circle-right"></i> Ir
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-3">
+                    <div class="card card-chart to-matricula">
+                      <div class="card-header">
+                        <h5 class="card-category">Acceso directo</h5>
+                        <h5 class="card-title">Matrícula</h5>
+                      </div>
+                      <div class="card-body">
+                        <div class="chart-area">
+                          <img alt="graduation-cap" th:src="@{/img/edit.png}">
+                        </div>
+                      </div>
+                      <div class="card-footer bg-light text-center">
+                        <a class="stats" href="">
+                          <i class="fas fa-arrow-circle-right"></i> Ir
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-3">
+                    <div class="card card-chart to-mantenimiento">
+                      <div class="card-header">
+                        <h5 class="card-category">Acceso directo</h5>
+                        <h5 class="card-title">Mantenimiento</h5>
+                      </div>
+                      <div class="card-body">
+                        <div class="chart-area">
+                          <img alt="graduation-cap" th:src="@{/img/list.png}">
+                        </div>
+                      </div>
+                      <div class="card-footer bg-light text-center">
+                        <a class="stats" href="">
+                          <i class="fas fa-arrow-circle-right"></i> Ir
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-3">
+                    <div class="card card-chart to-contabilidad">
+                      <div class="card-header">
+                        <h5 class="card-category">Acceso directo</h5>
+                        <h5 class="card-title">Contabilidad</h5>
+                      </div>
+                      <div class="card-body">
+                        <div class="chart-area">
+                          <img alt="graduation-cap" th:src="@{/img/cash.png}">
+                        </div>
+                      </div>
+                      <div class="card-footer bg-light text-center">
+                        <a class="stats" href="">
+                          <i class="fas fa-arrow-circle-right"></i> Ir
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-3">
+                    <div class="card card-chart to-aulas">
+                      <div class="card-header">
+                        <h5 class="card-category">Acceso directo</h5>
+                        <h5 class="card-title">Aulas</h5>
+                      </div>
+                      <div class="card-body">
+                        <div class="chart-area">
+                          <img alt="graduation-cap" th:src="@{/img/building.png}">
+                        </div>
+                      </div>
+                      <div class="card-footer bg-light text-center">
+                        <a class="stats" th:href="@{/formAula}">
+                          <i class="fas fa-arrow-circle-right"></i> Ir
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-3">
+                    <div class="card card-chart to-periodo">
+                      <div class="card-header">
+                        <h5 class="card-category">Acceso directo</h5>
+                        <h5 class="card-title">Periodo académico</h5>
+                      </div>
+                      <div class="card-body">
+                        <div class="chart-area">
+                          <img alt="graduation-cap" th:src="@{/img/calendar.png}">
+                        </div>
+                      </div>
+                      <div class="card-footer bg-light text-center">
+                        <a class="stats" th:href="@{/lectivo/form}">
+                          <i class="fas fa-arrow-circle-right"></i> Ir
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-3">
+                    <div class="card card-chart to-reportes">
+                      <div class="card-header">
+                        <h5 class="card-category">Acceso directo</h5>
+                        <h5 class="card-title">Reportes</h5>
+                      </div>
+                      <div class="card-body">
+                        <div class="chart-area">
+                          <img alt="graduation-cap" th:src="@{/img/report.png}">
+                        </div>
+                      </div>
+                      <div class="card-footer bg-light text-center">
+                        <a class="stats" href="">
+                          <i class="fas fa-arrow-circle-right"></i> Ir
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-3">
+                    <div class="card card-chart to-usuarios">
+                      <div class="card-header">
+                        <h5 class="card-category">Acceso directo</h5>
+                        <h5 class="card-title">Usuarios</h5>
+                      </div>
+                      <div class="card-body">
+                        <div class="chart-area">
+                          <img alt="graduation-cap" th:src="@{/img/user.png}">
+                        </div>
+                      </div>
+                      <div class="card-footer bg-light text-center">
+                        <a class="stats" href="">
+                          <i class="fas fa-arrow-circle-right"></i> Ir
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+          </div>
+
+          <footer class="footer" th:replace="layout/layout :: footer"></footer>
+        </div>        
+    </div>
+</body>
+</html>

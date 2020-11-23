@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+<head th:replace="layout/layout :: head"></head>
+
+<body>
+	<div class="wrapper ">
+		<div class="sidebar" data-color="red" th:replace="layout/layout :: sidebar"></div>
+
+		<div class="main-panel" id="main-panel">
+			<nav class="navbar navbar-expand-lg navbar-transparent  bg-primary  navbar-absolute"
+				th:replace="layout/layout :: navbar"></nav>
+
+			<div class="panel-header panel-header-lg">
+				<div th:replace="layout/layout :: error-msg" class="alert alert-danger alert-dismissible fade show"
+					role="alert" th:if="${error != null}"></div>
+			</div>
+
+			<div class="content">
+				<!--Codigo aqui-->
+				<div class="row">
+					<div class="col-md-12">
+						<div class="card">
+							<div class="card-header">
+								<h5 class="mb-4">Lista de periodos académicos</h5>
+							</div>
+							<div class="card-body">
+								<div class="table-responsive">
+									<table class="table table-bordered table-hover">
+										<thead class="thead-darkx text-danger">
+											<tr>
+												<th>Id</th>
+												<th>Año</th>
+												<th>Fecha inicio</th>
+												<th>Fecha fin</th>
+												<th>Fecha creación</th>												
+												<th></th>
+												<th></th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr th:each="item:${anio_lectivo}">
+												<td th:text="${item.id}"></td>
+												<td th:text="${item.anio}"></td>
+												<td th:text="${item.fecha_inicio}"></td>
+												<td th:text="${item.fecha_fin}"></td>
+												<td th:text="${item.fecha_creacion}"></td>												
+												<td>
+													<a th:href="@{/lectivo/form/}+${item.id}"
+														class="btn btn-warning">
+														<i class="far fa-edit"></i>
+													</a>
+												</td>
+												<td>
+													<a th:href="@{/lectivo/eliminarlectivo/}+${item.id}"
+														class="btn btn-danger"
+														onclick="return confirm('Seguro que desea eliminar el registro?');">
+														<i class="far fa-trash-alt"></i>
+													</a>
+												</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+								<br>
+								<a th:href="@{/lectivo/form}" class="btn btn-info">
+									<i class="fas fa-plus-circle"></i> Nuevo registro
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<footer class="footer" th:replace="layout/layout :: footer"></footer>
+		</div>
+	</div>
+</body>
+
+</html>

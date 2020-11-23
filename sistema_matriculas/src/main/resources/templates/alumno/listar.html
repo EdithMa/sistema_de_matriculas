@@ -1,60 +1,88 @@
 <!DOCTYPE html>
 <html>
+
 <head th:replace="layout/layout :: head"></head>
-<body id="page-top">
-	<div id="wrapper">
- 	<ul th:replace="layout/layout :: sidebar" class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
-    </ul>
-    <div id="content-wrapper" class="d-flex flex-column">
-    	<div id="content">
-    		<nav th:replace="layout/layout :: topbar" class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow"></nav>		
-				<div class="container mt-4">
-				<h1 class="text-center mb-4">Lista de Alumnos</h1>
-					<table class="table table-bordered table-hover">
-						<thead class="thead-dark">
-							<tr>
-								<th>Id</th>
-								<th>Nombre</th>
-								<th>Apellido</th>
-								
-								<th>Vive con</th>					
-								<th>Hermanos</th>
-								<th>Colegio proc.</th>
-								<th>Observaciones</th>
-								<th>Fecha Nac.</th>				
-								<th></th>
-								<th></th>					
-							</tr>
-						</thead>
-						<tbody>
-							<tr th:each="alumno:${alumnos}">
-								<td th:text="${alumno.alumno_id}"></td>
-								<td th:text="${alumno.nombre}"></td>
-								<td th:text="${alumno.apellido}"></td>			
-								<td th:text="${alumno.viveCon}"></td>					
-								<td th:text="${alumno.numeroHermanos}"></td>
-								<td th:text="${alumno.colegioProcedencia}"></td>
-								<td th:text="${alumno.observaciones}"></td>
-								<td th:text="${alumno.fechanac}"></td>									
-								<!--<td>
-									<a th:href="@{/formulario/}+${alumno.alumno_id}" class="btn btn-dark">Editar</a>
-								</td>  -->
-								<td>
-									<a th:href="@{/eliminarAl/}+${alumno.alumno_id}" class="btn btn-dark" onclick="return confirm('Seguro que desea eliminar el registro?');">Eliminar</a>
-								</td>
-							</tr>
-						</tbody>
-					</table>
-					<br>
-					<!--<a th:href="@{/formulario}" class="btn btn-info"><svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-person-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-			  <path fill-rule="evenodd" d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
-			</svg>Nuevo Alumno</a>-->
+
+<body>
+	<div class="wrapper ">
+		<div class="sidebar" data-color="red" th:replace="layout/layout :: sidebar"></div>
+
+		<div class="main-panel" id="main-panel">
+			<nav class="navbar navbar-expand-lg navbar-transparent  bg-primary  navbar-absolute"
+				th:replace="layout/layout :: navbar"></nav>
+
+			<div class="panel-header panel-header-lg">
+				<div th:replace="layout/layout :: error-msg" class="alert alert-danger alert-dismissible fade show"
+					role="alert" th:if="${error != null}"></div>
+			</div>
+
+			<div class="content">
+				<!--Codigo aqui-->
+				<div class="row">
+					<div class="col-md-12">
+						<div class="card">
+							<div class="card-header">
+								<h5 class="mb-4">Lista de Alumnos</h5>
+							</div>
+							<div class="card-body">
+								<div class="table-responsive">
+									<table class="table table-bordered table-hover">
+										<thead class="thead-darkx text-danger">
+											<tr>
+												<th>Id</th>
+												<th>Nombre</th>
+												<th>Apellido</th>
+												<th>Vive con</th>
+												<th>Hermanos</th>
+												<th>Colegio proc.</th>
+												<th>Dirección</th>
+												<th>Fecha Nac.</th>
+												<th>Dni</th>
+												<th></th>
+												<th></th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr th:each="alumno:${alumnos}">
+												<td th:text="${alumno.alumno_id}"></td>
+												<td th:text="${alumno.nombre}"></td>
+												<td th:text="${alumno.apellido}"></td>
+												<td th:text="${alumno.viveCon}"></td>
+												<td th:text="${alumno.numeroHermanos}"></td>
+												<td th:text="${alumno.colegioProcedencia}"></td>
+												<td th:text="${alumno.direccion}"></td>
+												<td th:text="${alumno.fechanac}"></td>
+												<td th:text="${alumno.dni}"></td>
+												<td>
+													<a th:href="@{/formulario/}+${alumno.alumno_id}"
+														class="btn btn-warning">
+														<i class="far fa-edit"></i>
+													</a>
+												</td>
+												<td>
+													<a th:href="@{/eliminarAl/}+${alumno.alumno_id}"
+														class="btn btn-danger"
+														onclick="return confirm('Seguro que desea eliminar el registro?');">
+														<i class="far fa-trash-alt"></i>
+													</a>
+												</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+								<br>
+								<a th:href="@{/formulario}" class="btn btn-info">
+									<i class="fas fa-plus-circle"></i> Nuevo Alumno
+								</a>
+							</div>
+						</div>
+					</div>
 				</div>
-</div>
-    	 <footer th:replace="layout/layout :: footer" class="sticky-footer bg-white"></footer>
-    </div>
- </div>
- <div th:replace="layout/layout :: modal" class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true"></div>
- 
+			</div>
+
+			<footer class="footer" th:replace="layout/layout :: footer"></footer>
+		</div>
+	</div>
 </body>
+
 </html>

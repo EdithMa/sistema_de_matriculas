@@ -1,59 +1,79 @@
 <!DOCTYPE html>
 <html>
-<head th:replace="layout/layout :: head"></head>
-<body id="page-top">
-<body id="page-top">
 
- <div id="wrapper">
- 	<ul th:replace="layout/layout :: sidebar" class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
-    </ul>
-    <div id="content-wrapper" class="d-flex flex-column">
-    	<div id="content">
-    		<nav th:replace="layout/layout :: topbar" class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow"></nav>		
-    		
-				<div class ="container">
-				<br>
-				<h1>Lista de Apoderados</h1>
-				<table class = "table table-bordered table-hover">
-					<thead class="thead-dark">
-						<tr>
-							<th>ID</th>
-							<th>Nombre</th>
-							<th>Apellido</th>
-							<th>DNI</th>
-							<th>Email</th>
-							<th>Teléfono</th>
-							<th></th>
-							<!--  <th></th> -->
-						</tr>
-					</thead>
-					<tbody>
-						<tr th:each="item: ${apoderados}">
-							<td th:text="${item.id}"></td>
-							<td th:text="${item.nombre}"></td>
-							<td th:text="${item.apellidos}"></td>
-							<td th:text="${item.dni}"></td>
-							<td th:text="${item.email}"></td>
-							<td th:text="${item.telefono}"></td>
-							<!-- <td>
-								<a th:href="@{/formApoderados/}+${item.id}" class="btn btn-dark">Editar</a>
-								
-							</td> -->
-							<td> 
-								<a th:href="@{/eliminar/}+${item.id}" class="btn btn-dark" onclick="return confirm('¿Estás seguro de eliminar?');">Eliminar</a>
-							</td>
-						</tr>
-					</tbody>
-				</table>
-				<br>
-				
+<head th:replace="layout/layout :: head"></head>
+
+<body>
+	<div class="wrapper ">
+		<div class="sidebar" data-color="red" th:replace="layout/layout :: sidebar"></div>
+
+		<div class="main-panel" id="main-panel">
+			<nav class="navbar navbar-expand-lg navbar-transparent  bg-primary  navbar-absolute"
+				th:replace="layout/layout :: navbar"></nav>
+
+			<div class="panel-header panel-header-lg">
+				<div th:replace="layout/layout :: error-msg" class="alert alert-danger alert-dismissible fade show"
+					role="alert" th:if="${error != null}"></div>
+			</div>
+
+			<div class="content">
+				<!--Codigo aqui-->
+				<div class="row">
+					<div class="col-md-12">
+						<div class="card">
+							<div class="card-header">
+								<h5 class="mb-4">Lista de apoderados</h5>
+							</div>
+							<div class="card-body">
+								<div class="table-responsive">
+									<table class = "table table-bordered table-hover">
+										<thead class="thead-darkx text-danger">
+											<tr>
+												<th>ID</th>
+												<th>Nombre</th>
+												<th>Apellido</th>
+												<th>DNI</th>
+												<th>Email</th>
+												<th>Teléfono</th>
+												<th></th>
+												<!--  <th></th> -->
+											</tr>
+										</thead>
+										<tbody>
+											<tr th:each="item: ${apoderados}">
+												<td th:text="${item.id}"></td>
+												<td th:text="${item.nombre}"></td>
+												<td th:text="${item.apellidos}"></td>
+												<td th:text="${item.dni}"></td>
+												<td th:text="${item.email}"></td>
+												<td th:text="${item.telefono}"></td>
+												<td>
+													<a th:href="@{/formApoderados/}+${item.id}" class="btn btn-warning">
+														<i class="far fa-edit"></i>
+													</a>													
+												</td> 
+												<td> 
+													<a th:href="@{/eliminar/}+${item.id}" class="btn btn-danger" onclick="return confirm('¿Estás seguro de eliminar?');">
+														<i class="far fa-trash-alt"></i>
+													</a>
+												</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+								<br>
+								<a th:href="@{/formApoderados}" class="btn btn-info">
+									<i class="fas fa-plus-circle"></i> Nuevo apoderado
+								</a>
+							</div>
+						</div>
+					</div>
 				</div>
-				
-				</div>
-    	 <footer th:replace="layout/layout :: footer" class="sticky-footer bg-white"></footer>
-    </div>
- </div>
- <div th:replace="layout/layout :: modal" class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true"></div>
- 
+			</div>
+
+			<footer class="footer" th:replace="layout/layout :: footer"></footer>
+		</div>
+	</div>
 </body>
+
 </html>

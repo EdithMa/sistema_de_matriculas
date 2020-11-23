@@ -18,12 +18,7 @@ import com.sistema_matriculas.demo.models.entity.Apoderado;
 public class ApoderadoController {
 	
 	@Autowired
-	private IApoderadoDAO apoderadoDAO;
-	
-	@RequestMapping("/confirmation")
-	public String confirm() {		
-		return "apoderado/confirmation";
-	}
+	private IApoderadoDAO apoderadoDAO;	
 	
 	@RequestMapping("/apoderado/listaApoderados")
 	public String listar(Model model) {
@@ -37,16 +32,15 @@ public class ApoderadoController {
 		model.put("titulo", "Registrar datos del Apoderado");
 		model.put("nombreboton", "Registrarse");
 		model.put("apoderado", apoderado);
-		return "/apoderado/formApoderados";
+		return "apoderado/formApoderados";
 	}
 	
-	/*
 	@RequestMapping(value = "/formApoderados", method = RequestMethod.POST)
 	public String guardar (Apoderado apoderado) {
 		apoderadoDAO.save(apoderado);
 		return "redirect:/apoderado/listaApoderados";
 	}
-	*/
+	
 	@RequestMapping("/formApoderados/{id}")
 	public String editar(@PathVariable(value="id") Long id, Model model) {
 		Apoderado apoderado = null;
@@ -69,10 +63,5 @@ public class ApoderadoController {
 		return "redirect:/apoderado/listaApoderados";
 	}
 	
-	@RequestMapping(value = "/formApoderados", method = RequestMethod.POST)
-	public String guardar (Apoderado apoderado) {
-		apoderadoDAO.save(apoderado);
-		return "redirect:/confirmation";
-	}
 }
 

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+
+<head th:replace="layout/layout :: head"></head>
+
+<body>
+	<div class="wrapper ">
+		<div class="sidebar" data-color="red" th:replace="layout/layout :: sidebar"></div>
+
+		<div class="main-panel" id="main-panel">
+			<nav class="navbar navbar-expand-lg navbar-transparent  bg-primary  navbar-absolute"
+				th:replace="layout/layout :: navbar"></nav>
+
+			<div class="panel-header panel-header-lg">
+				<div th:replace="layout/layout :: error-msg" class="alert alert-danger alert-dismissible fade show"
+					role="alert" th:if="${error != null}"></div>
+			</div>
+
+			<div class="content">
+				<!--Codigo aqui-->
+				<div class="row">
+					<div class="col-md-12">
+						<div class="card">
+							<div class="card-header">
+								<h5 class="mb-4">Lista de aulas</h5>
+							</div>
+							<div class="card-body">
+								<div class="table-responsive">
+									<table class="table table-bordered table-hover">
+										<thead class="thead-darkx text-danger">
+											<tr>
+												<th>Id</th>
+												<th>Grado</th>
+												<th>Sección</th>
+												<th>Nivel</th>
+												<th>Capacidad</th>
+												<th></th>
+												<th></th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr th:each="grado:${grados}">
+												<td th:text="${grado.id}"></td>
+												<td th:text="${grado.grado}"></td>
+												<td th:text="${grado.secciones}"></td>
+												<td th:text="${grado.nivel}"></td>
+												<td th:text="${grado.capacidad}"></td>
+												<td>
+													<a th:href="@{/formAula/}+${grado.id}" class="btn btn-warning">
+														<i class="far fa-edit"></i>
+													</a>
+												</td>
+												<td>
+													<a th:href="@{/eliminarGrado/}+${grado.id}" class="btn btn-danger"
+														onclick="return confirm('Seguro que desea eliminar el registro?');">
+														<i class="far fa-trash-alt"></i>
+													</a>
+												</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+								<br>
+								<a th:href="@{/formAula}" class="btn btn-info">
+									<i class="fas fa-plus-circle"></i> Nueva aula
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<footer class="footer" th:replace="layout/layout :: footer"></footer>
+		</div>
+	</div>
+</body>
+
+</html>

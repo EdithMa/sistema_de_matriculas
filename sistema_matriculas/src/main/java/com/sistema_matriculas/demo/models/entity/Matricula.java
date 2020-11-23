@@ -28,7 +28,7 @@ public class Matricula implements Serializable{
 	//Relacion entre Matricula y Grado 
 	@ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
 	@JoinColumn(name= "grado_id")
-	private Grado grado;
+	private Aula grado;
 
 	public Long getId() {
 		return id;

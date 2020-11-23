@@ -30,10 +30,14 @@ public class Alumno implements Serializable{
 	private Long alumno_id;
 	private String nombre;
 	private String apellido;
-	private String viveCon;	
+	private String viveCon;
 	private String numeroHermanos;
 	private String colegioProcedencia;
-	private String observaciones;
+	private String direccion;
+	private String dni;
+	private String genero;
+	private String telefono;
+	private String email;
 	@DateTimeFormat(pattern="yyyy-MM-dd")
 	@Temporal(TemporalType.DATE)
 	private Date fechanac;
@@ -55,19 +59,28 @@ public class Alumno implements Serializable{
 	}
 	
 
-	
-	public Alumno(Long alumno_id, String nombre, String apellido, String viveCon, 
-			String numeroHermanos, String colegioProcedencia, String observaciones, Date fechanac) {
+	public Alumno(Long alumno_id, String nombre, String apellido, String viveCon, String dni, String genero,
+			String telefono, String email, String numeroHermanos, String colegioProcedencia, String direccion,
+			Date fechanac, Usuario usuario, List<Matricula> matricula) {
 		super();
 		this.alumno_id = alumno_id;
 		this.nombre = nombre;
 		this.apellido = apellido;
-		this.viveCon = viveCon;		
+		this.viveCon = viveCon;
+		this.dni = dni;
+		this.genero = genero;
+		this.telefono = telefono;
+		this.email = email;
 		this.numeroHermanos = numeroHermanos;
 		this.colegioProcedencia = colegioProcedencia;
-		this.observaciones = observaciones;
+		this.direccion = direccion;
 		this.fechanac = fechanac;
+		this.usuario = usuario;
+		this.matricula = matricula;
 	}
+
+
+
 
 	public Long getAlumno_id() {
 		return alumno_id;
@@ -100,12 +113,6 @@ public class Alumno implements Serializable{
 	public void setColegioProcedencia(String colegioProcedencia) {
 		this.colegioProcedencia = colegioProcedencia;
 	}
-	public String getObservaciones() {
-		return observaciones;
-	}
-	public void setObservaciones(String observaciones) {
-		this.observaciones = observaciones;
-	}
 	public Date getFechanac() {
 		return fechanac;
 	}
@@ -130,4 +137,65 @@ public class Alumno implements Serializable{
 	public void addMatricula(Matricula matricula) {
 		this.matricula.add(matricula);
 	}
+
+
+	public String getDni() {
+		return dni;
+	}
+
+
+	public void setDni(String dni) {
+		this.dni = dni;
+	}
+
+
+	public String getGenero() {
+		return genero;
+	}
+
+
+	public void setGenero(String genero) {
+		this.genero = genero;
+	}
+
+
+	public String getTelefono() {
+		return telefono;
+	}
+
+
+	public void setTelefono(String telefono) {
+		this.telefono = telefono;
+	}
+
+
+	public String getEmail() {
+		return email;
+	}
+
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+
+	public String getDireccion() {
+		return direccion;
+	}
+
+
+	public void setDireccion(String direccion) {
+		this.direccion = direccion;
+	}
+
+
+	public Usuario getUsuario() {
+		return usuario;
+	}
+
+
+	public void setUsuario(Usuario usuario) {
+		this.usuario = usuario;
+	}
+	
 }

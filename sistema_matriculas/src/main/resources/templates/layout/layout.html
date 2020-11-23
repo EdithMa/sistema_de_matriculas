@@ -1,225 +1,215 @@
 <!DOCTYPE html>
 <html lang="es" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
-      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+  xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
 
-<head th:fragment="head">  
+<head th:fragment="head">
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no'
+    name='viewport' />
+  <title>I.E.P. INTELLECTUM SANTA ISABEL</title>
 
-  <title>Panel de control</title>
-  <!-- Custom fonts for this template-->
-  <link th:href="@{/vendor/fontawesome-free/css/all.min.css}" rel="stylesheet" type="text/css">
-  <link th:href="@{https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i}" rel="stylesheet">
+  <!-- CSS Files -->
+  <link rel="stylesheet" type="text/css" th:href="@{/css/bootstrap.min.css}" />
 
-  <!-- Custom styles for this template-->
-  <link th:href="@{/css/sb-admin-2.min.css}" rel="stylesheet">
-	
- <!-- Bootstrap core JavaScript-->
-  <script th:src="@{/vendor/jquery/jquery.min.js}"></script>
-  <script th:src="@{/js/bootstrap.bundle.min.js}"></script>
 
-  <!-- Core plugin JavaScript-->
-  <script th:src="@{/vendor/jquery-easing/jquery.easing.min.js}"></script>
+  <!--     Fonts and icons     -->
+  <link rel="stylesheet" type="text/css" th:href="@{/fontawesome-free/css/all.min.css}" />
+  <link rel="stylesheet" type="text/css" th:href="@{css/_all-skins.min.css}" />
+  <link rel="stylesheet" type="text/css" th:href="@{/css/now-ui-dashboard.css?v=1.5.0}" />
+  <link rel="stylesheet" type="text/css" th:href="@{/css/custom.css}">
 
-  <!-- Custom scripts for all pages-->
-  <script th:src="@{/js/sb-admin-2.min.js}"></script>
-
-  <!-- Page level plugins -->
-  <script th:src="@{/vendor/chart.js/Chart.min.js}"></script>
-  
-  
-<link rel="stylesheet" type="text/css" th:href="@{/css/bootstrap.min.css}">
-<link rel="stylesheet" type="text/css" th:href="@{/css/custom.css}">
-<script th:src="@{/js/jquery-3.5.1.min.js}" type="text/javascript"></script>
-<script th:src="@{/js/bootstrap.min.js}" type="text/javascript"></script>
-<script th:src="@{/js/popper.min.js}" type="text/javascript"></script>
-<script th:src="@{/js/funciones.js}" type="text/javascript"></script>
+  <!--   Core JS Files   -->
+  <script th:src="@{/js/jquery-3.5.1.min.js}" type="text/javascript"></script>
+  <script th:src="@{/js/funciones.js}" type="text/javascript"></script>
+  <script th:src="@{/js/jquery.min.js}"></script>
+  <script th:src="@{/js/popper.min.js}"></script>
+  <script th:src="@{/js/bootstrap.min.js}" type="text/javascript"></script>
+  <script th:src="@{/js/perfect-scrollbar.jquery.min.js}"></script>
+  <!-- Chart JS -->
+  <script th:src="@{/js/chartjs.min.js}"></script>
+  <!--  Notifications Plugin    -->
+  <script th:src="@{/js/bootstrap-notify.js}"></script>
+  <!-- Control Center for Now Ui Dashboard: parallax effects, scripts for the example pages etc -->
+  <script th:src="@{/js/now-ui-dashboard.min.js?v=1.5.0}" type="text/javascript"></script>
 </head>
 
-<body id="page-top">
+<body class="">
 
-  <!-- Page Wrapper -->
-  <div id="wrapper">
+  <div class="wrapper ">
 
-    <!-- Sidebar -->
-    <ul th:fragment="sidebar" class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
-
-      <!-- Sidebar - Brand -->
-      <a class="sidebar-brand d-flex align-items-center justify-content-center" th:href="@{/admin/index}">
-        <div class="sidebar-brand-icon rotate-n-15">
-          <i class="fas fa-laugh-wink"></i>
-        </div>
-      </a>
-
-      <!-- Heading -->
-      <div class="sidebar-heading">
-        
-
-      </div>
-	
-      <!-- Nav Item - Pages Collapse Menu 
-      <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
-          <i class="fas fa-users"></i>
-          <span>Apoderados</span>
+    <div class="sidebar" data-color="red" th:fragment="sidebar">
+      <!--
+        Tip 1: You can change the color of the sidebar using: data-color="blue | green | orange | red | yellow"
+    -->
+      <div class="logo">
+        <a href="http://www.creative-tim.com" class="simple-text logo-normal">
+          I.E.P. INTELLECTUM SANTA ISABEL
         </a>
-        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-          <div class="bg-white py-2 collapse-inner rounded">
-            <h6 class="collapse-header">Administrar:</h6>
-            <a class="collapse-item" th:href="@{/apoderado/listaApoderados}">Listar Apoderados</a>
+      </div>
+      <div class="sidebar-wrapper" id="sidebar-wrapper">
+        <ul class="nav">
+          <li class="active ">
+            <a th:href="@{/principal/}">
+              <i class="fas fa-house-user"></i>
+              <p>Inicio</p>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <i class="fas fa-coins"></i>
+              <p>Contabilidad</p>
+            </a>
+          </li>
+          <li>
+            <a href="./map.html">
+              <i class="fas fa-edit"></i>
+              <p>Matrícula</p>
+            </a>
+          </li>
+          <li class="accordion" id="accordionExample">
+            <a class="btn-link" href="#" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false"
+              aria-controls="collapseOne">
+              <i class="fas fa-list"></i>
+              <span>Mantenimiento</span>
+            </a>
+            <div id="collapseOne" class="rounded bg-white py-2 collapse" aria-labelledby="headingOne"
+              data-parent="#accordionExample">
+              <div class="bg-white py-2 collapse-inner rounded">
+                <a class="collapse-item" th:href="@{/alumno/listar}">
+                <i class="fas fa-atom"></i>
+                 Alumnos</a>
+                <a class="collapse-item" th:href="@{/apoderado/listaApoderados}">
+                <i class="fas fa-atom"></i>
+                 Apoderados</a>
+                <a class="collapse-item" th:href="@{/aula/listaAulas}">
+                <i class="fas fa-atom"></i>
+                 Aulas</a>
+                <a class="collapse-item" th:href="@{/lectivo/listar}">
+                <i class="fas fa-atom"></i>
+                 Periodo académico</a>
+              </div>
+            </div>
+          </li>
+          <li>
+            <a href="./user.html">
+              <i class="fas fa-chart-pie"></i>
+              <p>Reportes</p>
+            </a>
+          </li>
+          <li>   
+           <a class="link-to-off">        
+            <form th:action="@{/logout}" method="post">
+              <i class="fas fa-power-off"></i>
+              <p><input type="submit" value="Cerrar Sesion"/></p>
+            </form>  
+            </a>           
+          </li>
+        </ul>
+      </div>
+    </div>
 
+    <div class="main-panel" id="main-panel">
+
+      <!-- Navbar -->
+      <nav class="navbar navbar-expand-lg navbar-transparent  bg-primary  navbar-absolute" th:fragment="navbar">
+        <div class="container-fluid">
+          <div class="navbar-wrapper">
+            <div class="navbar-toggle">
+              <button type="button" class="navbar-toggler">
+                <span class="navbar-toggler-bar bar1"></span>
+                <span class="navbar-toggler-bar bar2"></span>
+                <span class="navbar-toggler-bar bar3"></span>
+              </button>
+            </div>
+            <a class="navbar-brand" href="#pablo">Panel de control</a>
+          </div>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation"
+            aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-bar navbar-kebab"></span>
+            <span class="navbar-toggler-bar navbar-kebab"></span>
+            <span class="navbar-toggler-bar navbar-kebab"></span>
+          </button>
+          <div class="collapse navbar-collapse justify-content-end" id="navigation">
+            <form>
+              <div class="input-group no-border">
+                <input type="text" value="" class="form-control" placeholder="Search...">
+                <div class="input-group-append">
+                  <div class="input-group-text">
+                    <i class="fas fa-search"></i>
+                  </div>
+                </div>
+              </div>
+            </form>
+            <ul class="navbar-nav" style="align-items: center;">
+              <li class="nav-item">
+                <span class="mr-2 d-none d-lg-inline text-gray-600 small" th:inline="text">Hola [[${#httpServletRequest.remoteUser}]]!</span>
+              </li>
+              <li class="nav-item">              
+                <a class="nav-link" href="#pablo">
+                  <i class="fas fa-user"></i>
+                  <p>
+                    <span class="d-lg-none d-md-block">Account</span>
+                  </p>
+                </a>
+              </li>
+            </ul>
           </div>
         </div>
-      </li>
-	  
-	  <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
-                    <i class="fas fa-user-friends"></i>
-                    <span>Alumnos</span>
-                </a>
-                <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
-                    data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Administrar:</h6>
-                        <a class="collapse-item" th:href="@{/alumno/listar}">Listar Alumnos</a>
-                    </div>
-                </div>
-            </li> -->
-            
-        <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#Inicio" aria-expanded="true" aria-controls="Inicio">
-          <i class="fas fa-home"></i>
-          <span>Inicio</span>
-        </a>
-      </li>
-      
-      <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#Matricula" aria-expanded="true" aria-controls="Matricula">
-          <i class="fas fa-edit"></i>
-          <span>Matrícula</span>
-        </a>
-      </li>
-      
-      <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#Mantenimiento" aria-expanded="true" aria-controls="Mantenimiento">
-                    <i class="fas fa-list"></i>
-                    <span>Mantenimiento</span>
-                </a>
-                <div id="Mantenimiento" class="collapse" aria-labelledby="headingMantenimiento"
-                    data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">          
-                        <a class="collapse-item" th:href="@{/alumno/listar}">Alumno</a>
-                        <a class="collapse-item" th:href="@{/alumno/listar}">Apoderado</a>
-                        <a class="collapse-item" th:href="@{/alumno/listar}">Aula</a>
-                        <a class="collapse-item" th:href="@{/alumno/listar}">Pension</a>
-                        <a class="collapse-item" th:href="@{/alumno/listar}">Usuario</a>
-                        <a class="collapse-item" th:href="@{/alumno/listar}">Nivel</a>
-                        <a class="collapse-item" th:href="@{/alumno/listar}">Periodo Académico</a>
-                    </div>
-                </div>
-      </li>
-      
-      <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#Reportes" aria-expanded="true" aria-controls="Reportes">
-                    <i class="fas fa-list"></i>
-                    <span>Reportes</span>
-                </a>
-                <div id="Reportes" class="collapse" aria-labelledby="headingReportes"
-                    data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">          
-                        <a class="collapse-item" th:href="@{/alumno/listar}">Aulas</a>
-                        <a class="collapse-item" th:href="@{/alumno/listar}">Pensiones</a>
-                        <a class="collapse-item" th:href="@{/alumno/listar}">Pagos</a>            
-                    </div>
-                </div>
-      </li>
+      </nav>
+      <!-- End Navbar -->
 
-    </ul>
-    
-    <!-- End of Sidebar -->
-
-    <!-- Content Wrapper -->
-    <div id="content-wrapper" class="d-flex flex-column">
-
-      <!-- Main Content -->
-      <div id="content">
-
-        <!-- Topbar -->
-        <nav th:fragment="topbar" class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
-
-
-          <!-- Topbar Navbar -->
-          <ul class="navbar-nav ml-auto">
-                    
-            <!-- Nav Item - User Information -->
-            <li class="nav-item dropdown no-arrow">
-              <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <span class="mr-2 d-none d-lg-inline text-gray-600 small" th:inline="text">Hola [[${#httpServletRequest.remoteUser}]]!</span>
-                <form th:action="@{/logout}" method="post">
-                  <input type="submit" value="Cerrar Sesion"/>
-              </form>
-                <img class="img-profile rounded-circle" src="https://source.unsplash.com/QAB-WJcbgJk/60x60">
-              </a>
-              <h1><a th:href="@{/administrador}"> admin</a> | <a th:href="@{/user}"> user</a></h1>
-              <!-- Dropdown - User Information -->
-              <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
-                          
-                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
-                  <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
-                  Cerrar Sesión </a>
-              </div>
-            </li>
-          </ul>
-        </nav>
-        <!-- End of Topbar -->
-
-        <!-- Begin Page Content -->
-        <div class="container-fluid">
-                
-        <!-- /.container-fluid -->
+      <div class="panel-header panel-header-lg">
+        <!-- Mostrar errores y advertencias -->
+        <div th:fragment="error-msg" class="alert alert-danger alert-dismissible fade show" role="alert"
+          th:if="${error != null}">
+          <span th:text="${error}"></span>
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <canvas id="bigDashboardChart"></canvas>
       </div>
-      <!-- End of Main Content -->
 
-      <!-- Footer -->
-      <footer th:fragment="footer" class="sticky-footer bg-white">
-        <div class="container my-auto">
-          <div class="copyright text-center my-auto">
-            <span>Copyright &copy; Your Website 2020</span>
+      <div class="content">
+        <!-- Tu Contenido aquí -->
+
+        <!--end contenido-->
+      </div>
+
+      <footer class="footer" th:fragment="footer">
+        <div class=" container-fluid ">
+          <nav>
+            <ul>
+              <li>
+                <a href="https://www.creative-tim.com">
+                  Nuestro equipo
+                </a>
+              </li>
+              <li>
+                <a href="http://presentation.creative-tim.com">
+                  Nosotros
+                </a>
+              </li>
+              <li>
+                <a href="http://blog.creative-tim.com">
+                  Blog
+                </a>
+              </li>
+            </ul>
+          </nav>
+          <div class="copyright" id="copyright">
+            &copy;
+            <script>
+              document.getElementById('copyright').appendChild(document.createTextNode(new Date().getFullYear()))
+            </script>, Designed by <a href="https://www.invisionapp.com" target="_blank">Invision</a>. Coded by <a
+              href="https://www.creative-tim.com" target="_blank">Creative Tim</a>.
           </div>
         </div>
       </footer>
-      
-      <!-- End of Footer -->
 
     </div>
-    <!-- End of Content Wrapper -->
-
   </div>
-  <!-- End of Page Wrapper -->
-</div>
-  
-
-  <!-- Logout Modal-->
-  <div th:fragment="modal" class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">¿Listo para salir?</h5>
-          <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true"></span>
-          </button>
-        </div>
-        <div class="modal-body"> Seleccione "Cerrar sesión" a continuación si está listo para finalizar su sesión actual.</div>
-        <div class="modal-footer">
-          <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancelar</button>
-          <a class="btn btn-primary" th:href="@{/admin}">Salir</a>
-        </div>
-      </div>
-    </div>
-  </div>
-
- 
 
 </body>
 
